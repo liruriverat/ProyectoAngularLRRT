@@ -1,0 +1,19 @@
+{
+  "autos": [
+    {
+      "id": 1,
+      "marca": "Volkswagen",
+      "modelo": "Jetta"
+    },
+    {
+      "id": 2,
+      "marca": "Chevrolet",
+      "modelo": "Aveo"
+    },
+    {
+      "id": 3,
+      "marca": "Nissan",
+      "modelo": "Altima"
+    }
+  ]
+}
