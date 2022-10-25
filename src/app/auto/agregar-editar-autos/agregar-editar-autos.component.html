@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col">
+
+            <h1>Agregar auto</h1>
+        </div>
+    </div>
+
+    <form [formGroup]="formulario" autocomplete="off" >
+        <div class="row">
+            <div class="col-6">  
+
+
+
+                <mat-form-field class="w-100">
+                    <mat-label>Marca: </mat-label>
+                    <input matInput formControlName="marca"/>
+                </mat-form-field>
+                <div *ngIf="(marca?.dirty || marca?.touched) && marca?.errors">  
+                    <mat-error *ngIf="marca?.errors?.['required']">
+                        El nombre de la marca es requerido.
+                    </mat-error>
+
+                    <mat-error *ngIf="marca?.errors?.['minlength']">
+                        El nombre de la marca debe contener al menos 2 caracteres.
+                    </mat-error>
+
+                    <mat-error *ngIf="marca?.errors?.['maxlength']">
+                        El nombre de la marca no puede superar los 100 caracteres.
+                    </mat-error>
+
+                </div>
+              
+ 
+            </div>
+
+
+        </div>
+
+         <div class="row">
+            
+            <div class="col-6">  
+
+
+
+                <mat-form-field class="w-100">
+                    <mat-label>Modelo: </mat-label>
+                    <input matInput formControlName="modelo"/>
+                </mat-form-field>
+                <div *ngIf="(modelo?.dirty || modelo?.touched) && modelo?.errors">  
+                    <mat-error *ngIf="modelo?.errors?.['required']">
+                        El nombre del modelo es requerido
+                    </mat-error>
+
+                    <mat-error *ngIf="modelo?.errors?.['minlength']">
+                        El nombre del modelo debe contener al menos 2 caracteres.
+                    </mat-error>
+
+                    <mat-error *ngIf="modelo?.errors?.['maxlength']">
+                        El nombre del modelo no puede superar los 100 caracteres.
+                    </mat-error>
+
+                </div>
+              
+ 
+            </div>
+
+        </div> 
+
+        <div class="row">
+            <div class="col-6">
+                <button mat-raised-button 
+                    color="primary"
+                    type="submit"
+                    [disabled]="formulario.invalid"                 
+                    class="me-5">                 
+                    Guardar <mat-icon>save</mat-icon>
+                </button>
+
+                <button
+                mat-raised-button
+                color="secondary"
+                [routerLink]="['/auto']"
+                type="button">
+                Regresar <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
